@@ -1,5 +1,5 @@
 [GLOBAL]
-pants_version = "2.22.0a0"
+pants_version = "2.21.0"
 backend_packages = [
   "pants.backend.docker",
 ]
@@ -17,6 +17,4 @@ interpreter_constraints = [">=3.9.8,<4"]
 
 [docker]
 build_verbose = "True"
-
-[docker.build_args]
-PIP_EXTRA_INDEX_URL = "<SOME_URL_HERE>"
+build_args = ["PIP_EXTRA_INDEX_URL=<SOME_URL_HERE>"]
