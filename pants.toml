@@ -1,5 +1,5 @@
 [GLOBAL]
-pants_version = "2.20.0"
+pants_version = "2.22.0a0"
 backend_packages = [
   "pants.backend.docker",
 ]
@@ -15,22 +15,8 @@ root_patterns = [
 [python]
 interpreter_constraints = [">=3.9.8,<4"]
 
-[subprocess-environment]
-env_vars = [
-  "NEXUS_USER",
-  "NEXUS_PWD",
-  "PIP_EXTRA_INDEX_URL",
-]
-
 [docker]
 build_verbose = "True"
-env_vars = [
-  "HOME",
-  "DOCKER_CONFIG=%(homedir)s/.docker",
-  "DOCKER_CONTEXT=default",
-  "NEXUS_USER",
-  "NEXUS_PWD",
-]
 
 [docker.build_args]
-PIP_EXTRA_INDEX_URL = "http://%(env.NEXUS_USER)s:%(env.NEXUS_PWD)s@URL:8081/repository/pypi/simple"
+PIP_EXTRA_INDEX_URL = "<SOME_URL_HERE>"
